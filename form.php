@@ -59,8 +59,6 @@
                 </form>
                     <div class = "col-6 col-md-5"></div>
                     <button type = "submit" name = "submit" class = "btn btn-primary" style = "width: 100%;margin-right:150px">ADD</button>
-                   
-
         </div>
     </body>
 </html>

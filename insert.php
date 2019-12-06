@@ -12,6 +12,18 @@ if(isset($_POST['submit'])){
     $married= mysqli_real_escape_string($conn, $_POST['married']);
     $workin= mysqli_real_escape_string ($conn, $_POST['workin']);
 
+    if (empty($name)|| empty($email)|| empty($phone)|| empty($gender)|| empty($year)|| empty($weight)|| 
+        empty($married)|| empty($workin)){
+        header("Location:fech.php?fields=empty");
+            exit();
+        }else{
+            
+        }    
+
+
+
+
+    
     $sql = "INSERT INTO crud(Name,Email,phonenumber,Gender,years,weight,married,workin)
     VALUES ('$name', '$email', '$phone','$gender','$year','$weight','$married','$workin')";
        
@@ -25,4 +37,5 @@ if(isset($_POST['submit'])){
         
 
 }
+
         ?>    

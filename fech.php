@@ -17,11 +17,18 @@
 				<input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search"> 
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
                 <button class='btn btn-primary' data-toggle='modal'style="margin-left:650px;" data-target='#staticBackdrop' type='button'>create new person</button>
-                <!-- <button class="btn btn-primary" data-target="#staticBackdrop" data-toggle="modal" style="margin-left:650px;" type="button"></button>  -->
-
-                <!-- <a href="form.php"> -->
-                <!-- <a href= "form.php"><button type="button" style ="margin-left:50px;"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a>
-                </button> -->
+                <script>
+					function myFunction() {
+					var txt;
+					var person = prompt("Please enter your name:", "Harry Potter");
+					if (person == null || person == "") {
+						txt = "User cancelled the prompt.";
+					} else {
+						txt = "Hello " + person + "! How are you today?";
+					}
+					document.getElementById("demo").innerHTML = txt;
+					}
+				</script>
 			</form>
 		</div>
 	</div>
@@ -62,8 +69,6 @@
 		                            <td>".$row['Workin']."</td>
 		                            <td><button class='btn btn-primary' data-toggle='modal' data-target='#edit".$row['id']."' type='button'>Edit</button></td>
 		                            <td><button class='btn btn-danger' data-toggle='modal' data-target='.modal-dialog modal-sm' type='button'>DELETE</button></td>
-                                   
-
                                 </tr>";
         ?>
                     <!-- edit modal -->
@@ -93,8 +98,8 @@
                                         </div><br>
                                         <div>
                                             <label>Gender</label><br>
-                                                <input type = "radio" id = "gender" style = "margin-left:10px"; name = "gender" value="<?php echo $row['Gender']; ?>">Male 
-                                                <input type = "radio" id = "gender" style = "margin-left:30px"; name = "gender"value="<?php echo $row['Gender']; ?>">female
+                                            <input type = "radio" id = "gender" style = "margin-left:10px"; name = "gender" value="<?php echo $row['Gender']; ?>">Male 
+                                            <input type = "radio" id = "gender" style = "margin-left:30px"; name = "gender"value="<?php echo $row['Gender']; ?>">female
                                         </div><br>
                                         <div class = "form-group">
                                             <label for = "exampleInputEmail1">Date</label>
@@ -107,17 +112,18 @@
                                             <small id = "emailHelp" class="form-text text-muted"></small>
                                         </div>
                                         <div><label>Married:</label><br>
-                                                <input type = "radio" id = "married" style = "margin-left:10px"; name = "married" value = "y">Yes
-                                                <input type = "radio" id = "married" style = "margin-left:30px"; name = "married" value = "N">No
+                                            <input type = "radio" id = "married" style = "margin-left:10px"; name = "married" value = "y">Yes
+                                            <input type = "radio" id = "married" style = "margin-left:30px"; name = "married" value = "N">No
                                         </div><br>
                                         <div class = "form-group">
                                             <label for = "exampleInputEmail1">Time in:</label>
                                             <input type = "time" name = "workin" class = "form-control" id = "exampleInputEmail1" aria-describedby = "emailHelp" placeholder="--------"value="<?php echo $row['Workin']; ?>">
                                             <small id = "emailHelp" class="form-text text-muted"></small>
                                         </div><br>
+										<div class="col-6 col-md-5"></div><button class="btn btn-primary" name="submit" style="width: 100%;margin-right:150px" type="submit">EDIT</button>
+				                		</div>
                                 </form>
-                                <div class="col-6 col-md-5"></div><button class="btn btn-primary" name="submit" style="width: 100%;margin-right:150px" type="submit">EDIT</button>
-				                </div>
+                            
                         </div>
                             </div>
                         </div>
@@ -147,12 +153,11 @@
                         </script> 
                         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
                         </script>
+						
                     </div>
                 <?php
-		                    }
-		                }else{
-		                    echo "<td colspan= '3' class= 'text-center'><h1>no data</h1></td>";
-		                }
+						}
+					}
 		       
 		        ?>
 	</table>
@@ -197,9 +202,9 @@
 								<label for="exampleInputEmail1">Time in:</label> <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" name="workin" placeholder="--------" type="time"> <small class="form-text text-muted" id="emailHelp"></small>
 							</div><br>
 						</div>
+						<div class="col-6 col-md-5"></div><button class="btn btn-primary" name="submit" style="width: 100%;margin-right:150px" type="submit">ADD</button>
+						</div>
 					</form>
-					<div class="col-6 col-md-5"></div><button class="btn btn-primary" name="submit" style="width: 100%;margin-right:150px" type="submit">ADD</button>
-				</div>
 			</div>
 		</div>
 	</div>
